@@ -3,16 +3,29 @@
 
 #include "config.h"
 #include <QString>
+#include "fsplugin.h"
+
+class Config
+{
+public:
+    Config() {}
+};
 
 class Filter
 {
+protected:
+    QVector<QString> pluginFileList;
 public:
     /**
      * @brief Конструктор.
-     *
      * @detailed Читает из конфига имена библиотек для загрузки и загружает их.
      */
     Filter(Config& conf);
+
+    /***************************************/
+    void loadPluginList();
+
+    /***************************************/
 
     /**
      * @brief Обработать файл.
