@@ -16,22 +16,22 @@ FSPlugin::~FSPlugin()
 
 QString FSPlugin::getPluginFileName()
 {
-    return this->pluginFileName;
+    return this->plugin_file_name;
 }
 
 void FSPlugin::setPluginFileName(QString filename)
 {
-    this->pluginFileName = filename;
+    this->plugin_file_name = filename;
 }
 
 void FSPlugin::setFileName(QString filename)
 {
-    this->fileName = filename;
+    this->file_name = filename;
 }
 
 QString FSPlugin::getFileName()
 {
-    return this->fileName;
+    return this->file_name;
 }
 
 void FSPlugin::loadPlugin()
@@ -43,16 +43,16 @@ void FSPlugin::loadPlugin()
     this->lib.setFileName(this->getPluginFileName());
     this->lib.load();
 
-    this->mainFunc = (pluginfunc)(this->lib.resolve("fsprocess"));
+    this->main_func = (pluginfunc)(this->lib.resolve("fsmain"));
 }
 
 bool FSPlugin::process()
 {
-    return this->mainFunc(this->fileName);
+    return this->main_func(this->file_name);
 }
 
 bool FSPlugin::process(QString filename)
 {
     this->setFileName(filename);
-    return this->mainFunc(this->fileName);
+    return this->main_func(this->file_name);
 }
