@@ -1,21 +1,22 @@
 #ifndef EVENTHANDLER_H
 #define EVENTHANDLER_H
 
-#include <filter.h>
+//#include "filter.h"
 #include <QString>
+#include <QObject>
 
 /// @todo А нужен ли нам этот класс? Мб сразу ловить сигнал в фильтре?
 
-class EventHandler
+class EventHandler : public QObject
 {
-    Q_OBJECT;
+    Q_OBJECT
 public:
     /**
      * @brief Конструктор.
      *
      * @detailed Запоминает фильтр к которому будет обращаться.
      */
-    EventHandler();
+    EventHandler(){};
 
 public slots:
     /**

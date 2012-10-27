@@ -13,7 +13,7 @@ public:
      *
      * @param filename - имя файла конфига
      */
-    Config(QString filename);
+    Config(QString filename){};
 
     /**
      * @brief Прочитать значение.
@@ -22,7 +22,7 @@ public:
      *
      * @return Значение параметра или пустая строка, если параметр не найден
      */
-    QString get_value(QString name);
+    QString get_value(QString name){};
 
     /**
      * @brief Записать значение.
@@ -30,7 +30,7 @@ public:
      * @detailed Записывает значение параметра, если параметр отсутствует, то
      * создает его
      */
-    void set_value(QString name, QString value);
+    void set_value(QString name, QString value){};
 };
 
 #endif // CONFIG_H

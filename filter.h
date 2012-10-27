@@ -12,7 +12,7 @@ public:
      *
      * @detailed Читает из конфига имена библиотек для загрузки и загружает их.
      */
-    Filter(Config& conf);
+    Filter(Config& conf) {};
 
     /**
      * @brief Обработать файл.
@@ -22,7 +22,7 @@ public:
      *
      * @param filename - имя файла
      */
-    void process(QString filename);
+    void process(QString filename) {};
 };
 
 #endif // FILTER_H

@@ -26,3 +26,5 @@ HEADERS += \
     filter.h \
     eventhandler.h \
     eventemitter.h
+
+QMAKE_CXXFLAGS += -std=c++11    # TODO: Переносимость для других компиляторов
