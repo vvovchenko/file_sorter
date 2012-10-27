@@ -15,9 +15,7 @@ Config::Config(QString filename)
                 stream >> key;
                 continue;
             }
-            if (value.isEmpty()) {
-                stream >> value;
-            }
+            stream >> value;
 
             conf[key] = value;
 
